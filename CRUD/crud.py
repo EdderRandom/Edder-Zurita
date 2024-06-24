@@ -4,7 +4,7 @@ import traceback
 
 #La "tabla_usuario" es donde almacenare los datos de lops usuario que ire creando, eliminado, actualizando
 #que tiene que llamarse de la misma forma que el "sql" para que se cree de buena forma
-#ocuapar el commit para para guardar los datos que se esten creadndo actualizando y eliminado
+#ocupar el commit para para guardar los datos que se estén creando actualizando y eliminado
 
 def selectAll(connection):
     try:
@@ -15,13 +15,13 @@ def selectAll(connection):
         print("Nombre\t\tEmail\t\tFecha") #Date time se maneja desde python. 
         for row in result:
             print("{}   {}  {}  ".format(row[0], row[1], row[2]))
-        #connection.close() #este me cierra la conexcion y me genera problemas
+        #connection.close() #este me cierra la conexión y me genera problemas
     except Exception as ex:
         connection.rollback()
         print("error", ex)
 
 def selectOne(nombre, connection): #esta selection la pregunta en el def de selectOne
-    sql="select nombre, email, fecha from tabla_registro_usuario where nombre = %s" #que viene de la tabla que de pooverano
+    sql="select nombre, email, fecha from tabla_registro_usuario where nombre = %s" #que viene de la tabla que de poo verano
     try:
         connection = conex()
         cur = connection.cursor()
